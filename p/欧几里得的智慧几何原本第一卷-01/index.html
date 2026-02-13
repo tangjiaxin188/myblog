@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本篇文章介绍了几何原本第一卷中的定义、公设、公理和前6个命题">
+<title>欧几里得的智慧：几何原本第一卷 01</title>
+
+<link rel='canonical' href='https://blog.tangjiaxin.top/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/'>
+
+<link rel="stylesheet" href="/scss/style.min.51098b80cc297c94c0f57786d4a04e7372774e5993b60facf53870128a79bf73.css"><meta property='og:title' content="欧几里得的智慧：几何原本第一卷 01">
+<meta property='og:description' content="本篇文章介绍了几何原本第一卷中的定义、公设、公理和前6个命题">
+<meta property='og:url' content='https://blog.tangjiaxin.top/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/'>
+<meta property='og:site_name' content='TJX 的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='数学' /><meta property='article:tag' content='几何学' /><meta property='article:published_time' content='2026-02-09T15:11:37&#43;08:00'/><meta property='article:modified_time' content='2026-02-09T15:11:37&#43;08:00'/><meta property='og:image' content='https://blog.tangjiaxin.top/' />
+<meta name="twitter:title" content="欧几里得的智慧：几何原本第一卷 01">
+<meta name="twitter:description" content="本篇文章介绍了几何原本第一卷中的定义、公设、公理和前6个命题"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.tangjiaxin.top/' /><link rel="shortcut icon" href="/img/favicon.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/testjpg.jpg" 
+                        width="1220"
+                        height="878"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥵</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">TJX 的博客</a></h1>
+            <h2 class="site-description">这是TJX的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/tangjiaxin188'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/link/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Link</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#公设与公理">公设与公理</a></li>
+    <li><a href="#命题-11">命题 1.1</a></li>
+    <li><a href="#命题-12">命题 1.2</a></li>
+    <li><a href="#命题-13">命题 1.3</a></li>
+    <li><a href="#命题-14">命题 1.4</a></li>
+    <li><a href="#命题-15">命题 1.5</a></li>
+    <li><a href="#命题-16">命题 1.6</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/">
+            <img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti1.png" width="338" height="208" loading="lazy"
+                alt="Featured image of post 欧几里得的智慧：几何原本第一卷 01" />
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/%E6%95%B0%E5%AD%A6/" style="background-color: hsl(300, 60%, 84%); color: hsl(300, 60%, 15%);">
+                数学
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/">欧几里得的智慧：几何原本第一卷 01</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            本篇文章介绍了几何原本第一卷中的定义、公设、公理和前6个命题
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2026-02-09T15:11:37&#43;08:00'>Monday, February 9, 2026</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#公设与公理">公设与公理</a></li>
+    <li><a href="#命题-11">命题 1.1</a></li>
+    <li><a href="#命题-12">命题 1.2</a></li>
+    <li><a href="#命题-13">命题 1.3</a></li>
+    <li><a href="#命题-14">命题 1.4</a></li>
+    <li><a href="#命题-15">命题 1.5</a></li>
+    <li><a href="#命题-16">命题 1.6</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>本系列文章参考内容、图片来自 <a class="link" href="http://www.mathsgreat.com/SC/index.html"  target="_blank" rel="noopener"
+    >大哉言数</a></p>
+<h2 id="前言">前言
+</h2><blockquote>
+    <p>我与先生（利玛窦，明朝万历年间意大利传教士）交游日久，谈道之余常涉此学（即为数学，前文中徐光启认为数学非常重要），遂请其出示象数诸书，更译为华文。先生独言：此书（即几何原本）若不先译，则他书皆难理解。于是共译其精要六卷。译事既成，反复研读，方知其“由浅入深，由疑得信”，看似“无用”实为“众用之基”，真可谓包容万象之形、汇聚百家之学的海洋。虽未尽全书之妙，然以此为基，他书皆可循理而论。</p><span class="cite"><span>― </span><span>徐光启, </span><a href="http://www.mathsgreat.com/SC/elements/elements.html"><cite>几何原本序-徐光启</cite></a></span></blockquote>
+<p>明朝万历时期徐光启在了解几何原本后感叹到其精妙。徐光启认为数学是非常重要的基础学科，器械、历法、音律都是掌握数学的精妙而做到的，徐光启同时还看到中国的古典数学在秦始皇焚书后便失传，后世的数学就像盲人射箭般凭臆测猜想，或者仅仅模仿前人，几乎废绝；而几何原本则是徐光启认为的数学之根本，承接了中国失传的古典数学，是非常重要的书籍。可惜即使徐光启拥有超前的理念，也无法挽回朝代的衰落与更替，无法与欧洲直接进行学术交流的中国最后还是落后于世界近200年&hellip;</p>
+<p>现在看几何原本当然学不到足够多的知识，而且其中也有现在认为具有争议的内容，但是通过阅读几何原本，我们可以学习到欧几里得通过公理体系进行推理论证的智慧，可以看看这个两千多年前的人类是如何用智慧搭建出数学的地基的。</p>
+<h2 id="公设与公理">公设与公理
+</h2><p>在第一卷的一开始，欧几里得便提出了23个定义，5个公设和5个公理。其中定义是用于描述欧几里得几何推理的内容的，其中很多东西我们都在小学/中学的时候学习过了，等用到独特定理的时候再细说。公设则是欧几里得对于几何理论体系的假设，是符合直觉的假设，公理则是更广泛，在几何理论体系外也适用的假设。</p>
+<p>公设包括：</p>
+<ol>
+<li><strong>从任一点到任一点可作一条直线</strong></li>
+<li><strong>一条有限直线可沿直线继续延长</strong></li>
+<li><strong>以任一点为圆心和任意距离可以作圆</strong></li>
+<li><strong>所有直角都彼此相等</strong></li>
+<li><strong>一条直线与两条直线相交，若在同侧的两内角之和小于两直角，则这两条直线无定限延长后在该侧相交</strong></li>
+</ol>
+<p>可以看到前四条都非常符合直觉，第五条要复杂的多，在定义23中，欧几里得认为平行线是无论怎么延长都不相交的两条直线，这个公设简单来说就是**两条线之间如果不平行，则一定相交，而平行线只有一条。**这个公设等价于我们在义务教育中学到的那个更简单的说法：**过直线外一点，有且只有一条直线与已知直线平行。**在几千年来一直有数学家讨论其正确性，还催生出了非欧几何（不遵循第五公设的几何体系），当然那就是后话了。</p>
+<p>公理包括：</p>
+<ol>
+<li><strong>等于同量的量也彼此相等</strong></li>
+<li><strong>等量加等量，其和相等</strong></li>
+<li><strong>等量减等量，其差相等</strong></li>
+<li><strong>彼此重合的东西彼此相等</strong></li>
+<li><strong>整体大于部分</strong></li>
+</ol>
+<p>这是完全符合直觉的。</p>
+<p>除了公设和公理外，欧几里得还有两个工具，一个是圆规，一个是没有刻度的尺子</p>
+<h2 id="命题-11">命题 1.1
+</h2><p>好了，说了那么多，现在终于可以开始命题相关的内容了。</p>
+<p>第一个命题是<strong>给定一个有限直线（在几何原本中，直线和线段统称为直线，把它当作可以随意延长的线段就行了，详情见定义2，3，4），作出以该直线为边长的等边三角形。<strong>这个命题非常简单，仅需要靠</strong>定义15，16</strong>（即描述圆的定义，圆心离圆的距离楚楚相等）和<strong>公设3</strong>就能作出。</p>
+<p>如图所示：</p>
+<p><img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti1.png"
+	width="338"
+	height="208"
+	loading="lazy"
+	
+		alt="命题1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="162"
+		data-flex-basis="390px"
+	
+></p>
+<p>在直线的两端，以直线为半径画两个圆，连接两端到圆的交点上，由于直线和连接的这两条线都是相同半径的圆的半径，故三条线都相等。这个命题作为第一个命题，是因为其完成了一个非常重要的工作，即画出一个和给定直线等长的直线。有人可能好奇，等长线段不是直接用圆规就能描述吗，但是这样的描述并不准确，和在尺子上刻上刻度一样属于不精确的作图。欧几里得用这个命题导出了制作精确等长直线的方法。等会我们就能看到其妙用了</p>
+<h2 id="命题-12">命题 1.2
+</h2><p>第二个命题是<strong>以一给定的点作为端点，要求作出一个等于给定的直线的直线。</strong>，就是给你一个有限长度的直线<em>BC</em>，然后给你一个点<em>A</em>，让你顺着这个点<em>A</em>做一个有限直线出来，这个直线长度等于给定的那个直线。</p>
+<p>如何获得和直线<em>BC</em>相等的长度呢，很简单，通过圆的半径处处相等的定义，以<em>B</em>为圆心，用<em>BC</em>为半径作圆即可。如何把这个长度移植到以<em>A</em>点为起始位置的地方呢？其实只需要再做个更大的圆就行了，我们需要一个新的圆心<em>D</em>，这个圆心到<em>A</em>和<em>B</em>的距离相等，并且以<em>D</em>加上<em>BC</em>的长度为半径，这样延长直线<em>DA</em>一直到其长度为圆D的半径时，我们就获得了两个相等的长度，这两个长度分别<em>DA</em>+<em>一个位置长度</em>和<em>DB</em>+<em>BC</em>，因为<em>DA</em>和<em>DB</em>相等，根据<strong>公理3</strong>，说明<em>这个长度</em>和<em>BC</em>相等。</p>
+<p>而找到<em>D</em>的方式就是通过<strong>命题1.1</strong>中绘制等边三角形的方法，欧几里得的这个方法真的让人惊呼其巧妙与严谨。</p>
+<p><img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti2.png"
+	width="289"
+	height="280"
+	loading="lazy"
+	
+		alt="命题2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="103"
+		data-flex-basis="247px"
+	
+></p>
+<h2 id="命题-13">命题 1.3
+</h2><p><strong>给定两条不等的直线，从较大的直线上截取一条直线等于较小的。</strong>
+给一个直线<em>C</em>和一个较大的直线<em>AB</em>，在<em>AB</em>上作出<em>C</em>等长度的直线
+这个命题的思路就很轻松了，刚才的<strong>命题1.2</strong>中我们知道了如何以一个点为端点作出一个直线的复制品。现在就可以利用这个方法。只需要在<em>A</em>点处复制<em>C</em>的长度，然后以这个长度为半径画圆，就能在<em>AB</em>上截取相同长度的直线。</p>
+<p><img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti3.png"
+	width="298"
+	height="261"
+	loading="lazy"
+	
+		alt="命题3"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="114"
+		data-flex-basis="274px"
+	
+></p>
+<h2 id="命题-14">命题 1.4
+</h2><p>**若有两个三角形，一个三角形的两边分别等于另一个三角形的两边，且相等直线所夹的角相等，则这两个三角形的底等于底，三角形等于三角形，其余的角也分别等于其余的角，即等边所对的角。**这个命题开始就复杂起来了，而且从作图变成了证明题。</p>
+<p>给你两个三角形<em>ABC</em>和<em>DEF</em>，其中<em>AB=DE</em>,<em>AC=DF</em>，角<em>BAC=EDF</em>，让你证明剩下的一个边和两个角也是相等的，这正是我们在初中学过的<strong>边角边</strong>证明全等的方法。</p>
+<p>在前面的命题中，我们已经掌握了复制和移植直线到另外的直线上的能力，这个证明还使用了<strong>定义8</strong>，内容是角是两条线的倾斜度决定的，也就是说如果是同一个角，那么两个直线的相对位置是一样的。欧几里得将<em>AB</em>,<em>AC</em>分别移植到<em>DE</em>,<em>DF</em>上，由于夹角相等，所以<em>B</em>,<em>C</em>自然而然的就落在了<em>E</em>,<em>F</em>两个点上。两个三角形的三个点重合，边自然也重合。根据<strong>公理4</strong>可知重合就是相等，于是得证。</p>
+<p><img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti4.png"
+	width="317"
+	height="153"
+	loading="lazy"
+	
+		alt="命题4"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="207"
+		data-flex-basis="497px"
+	
+></p>
+<p>这里说明一下，三角形的形状只是个参考，因为我们可以把相同长度复制到任何一个直线上，所以只要满足条件的两个三角形都能证明出来，这对于下一个命题非常重要。</p>
+<h2 id="命题-15">命题 1.5
+</h2><p>现在我们拥有了更强大的力量，可以证明两个三角形相等了。接下来的命题是**在等腰三角形中，两底角彼此相等；若继续延长腰，则底以下的两角也彼此相等。**乍一看上去可能会疑问：这也要证明？是的，这也要证明，欧几里得的公理体系十分严谨，我们从小学的时候就学过等腰三角形的性质，所以知道这个命题，对于没有证明这个性质的人来说，看上去很符合直觉，但是直觉有时候会骗人，所以需要从最基础的假设中把这些性质推导出来。</p>
+<p>给你一个等腰三角形<em>ABC</em>，其中<em>AB=AC</em>，延长<em>AB</em>,<em>AC</em>得到<em>BD</em>和<em>CE</em>，现在要证明 $ \angle ABC = \angle ACB $ 以及 $ \angle DBC = \angle ECB $ 。证明角度相等你想到了什么，根据上一个命题，我们可以通过证明全等三角形的方式找到相等角，现在这个命题要是有一个包含这两个角的全等三角形该多好啊，那就做辅助线自己造一个吧。</p>
+<p>我们在<em>BD</em>和<em>CE</em>上分别做两点<em>F</em>,<em>G</em>，使得<em>BF</em>=<em>CG</em>。前几个命题证明了我们可以这么做。此时我们构造了 $ \triangle ACF $ 和 $ \triangle ABG $ 根据<strong>公理2</strong>，<em>AF</em>=<em>AG</em>，由此我们可以证明这两个三角形全等。也就是说 $ \angle AFC = \angle AGB , FC = BG $ ；由此我们又可以证明 $ \triangle FBC = \triangle GCB $ ,由此就证明了 $ \angle DBC = \angle ECB $ 。又因为 $ \angle ACF = \angle ABG , \angle BCF = \angle CBG $，所以 $ \angle ABC = \angle ACB $</p>
+<p><img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti5.png"
+	width="220"
+	height="297"
+	loading="lazy"
+	
+		alt="命题5"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="74"
+		data-flex-basis="177px"
+	
+></p>
+<h2 id="命题-16">命题 1.6
+</h2><p>写到这里刚好100行，而且也是个整数，但是我还是打算把第六个命题讲一下，因为这是欧几里得第一次用反证法来证明命题。</p>
+<p>命题为 <strong>若一个三角形中两角彼此相等，则等角所对的边也彼此相等。</strong>，这是刚才的命题的逆命题，刚才是说只要等腰，两个角就相等，现在说只要两个角相等就是等腰。</p>
+<p>我们先画出一个两个角相等的三角形，并且假设其两边不相等，把长一点的边标准为<em>AB</em>，短边是<em>AC</em>，在<em>AB</em>上画上<em>AC</em>的等长的<em>BD</em>。连接<em>DC</em>，由于<em>BD</em>=<em>AC</em>，<em>BC</em>=<em>CB</em>, $ \angle ABC = \angle ACB $ 。所以 $ \triangle ABC = \triangle DBC $ ,然而 $ \triangle DBC $ 只是 $ \triangle ABC $ 的一部分，根据<strong>公理5</strong>，这是不可能的。</p>
+<p><img src="/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/mingti6.png"
+	width="212"
+	height="247"
+	loading="lazy"
+	
+		alt="命题6"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="85"
+		data-flex-basis="205px"
+	
+></p>
+<p>由此我们了解了前六个证明，虽然不多但是依旧能感受到欧几里得令人拍案叫绝的智慧。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%95%B0%E5%AD%A6/">数学</a>
+        
+            <a href="/tags/%E5%87%A0%E4%BD%95%E5%AD%A6/">几何学</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "TJX 的博客" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 TJX 的博客
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+    
+
+            </main>
+        </div>
+        <script type="text/javascript" src="/ts/main.acaf849f2b273f6a8368a58b001f336738d0c948d92e79b116467d0c7515f932.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
