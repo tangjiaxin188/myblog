@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on TJX 的博客</title>
-        <link>http://localhost:1313/page/</link>
+        <link>https://blog.tangjiaxin.top/page/</link>
         <description>Recent content in Pages on TJX 的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 06 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.tangjiaxin.top/page/index.xml" rel="self" type="application/rss+xml" /><item>
             <title>Archives</title>
-            <link>http://localhost:1313/archives/</link>
+            <link>https://blog.tangjiaxin.top/archives/</link>
             <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
-            <guid>http://localhost:1313/archives/</guid>
+            <guid>https://blog.tangjiaxin.top/archives/</guid>
             <description></description>
         </item><item>
             <title>Link</title>
-            <link>http://localhost:1313/link/</link>
+            <link>https://blog.tangjiaxin.top/link/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            <guid>http://localhost:1313/link/</guid>
+            <guid>https://blog.tangjiaxin.top/link/</guid>
             <description></description>
         </item><item>
             <title>Search</title>
-            <link>http://localhost:1313/search/</link>
+            <link>https://blog.tangjiaxin.top/search/</link>
             <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-            <guid>http://localhost:1313/search/</guid>
+            <guid>https://blog.tangjiaxin.top/search/</guid>
             <description></description>
         </item></channel>
 </rss>
