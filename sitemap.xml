@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.tangjiaxin.top/p/%E6%88%91%E4%B8%8E%E5%93%B2%E5%AD%A6%E7%9A%84%E6%95%85%E4%BA%8B%E4%BB%A5%E5%8F%8A%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+  </url><url>
     <loc>https://blog.tangjiaxin.top/p/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%9A%84%E6%99%BA%E6%85%A7%E5%87%A0%E4%BD%95%E5%8E%9F%E6%9C%AC%E7%AC%AC%E4%B8%80%E5%8D%B7-01/</loc>
     <lastmod>2026-02-09T15:11:37+08:00</lastmod>
   </url><url>
@@ -9,16 +12,22 @@
     <lastmod>2026-02-08T23:42:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/</loc>
-    <lastmod>2026-02-09T15:11:37+08:00</lastmod>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/categories/</loc>
-    <lastmod>2026-02-09T15:11:37+08:00</lastmod>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/post/</loc>
-    <lastmod>2026-02-09T15:11:37+08:00</lastmod>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/tags/</loc>
-    <lastmod>2026-02-09T15:11:37+08:00</lastmod>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/tags/%E6%80%9D%E8%80%83/</loc>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/tags/%E5%87%A0%E4%BD%95%E5%AD%A6/</loc>
     <lastmod>2026-02-09T15:11:37+08:00</lastmod>
@@ -40,8 +49,6 @@
   </url><url>
     <loc>https://blog.tangjiaxin.top/page/</loc>
     <lastmod>2022-03-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.tangjiaxin.top/p/</loc>
   </url><url>
     <loc>https://blog.tangjiaxin.top/link/</loc>
   </url><url>
