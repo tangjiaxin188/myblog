@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.tangjiaxin.top/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/</loc>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
+  </url><url>
     <loc>https://blog.tangjiaxin.top/p/%E6%88%91%E4%B8%8E%E5%93%B2%E5%AD%A6%E7%9A%84%E6%95%85%E4%BA%8B%E4%BB%A5%E5%8F%8A%E5%AF%B9%E4%B8%96%E7%95%8C%E7%9A%84%E6%80%9D%E8%80%83/</loc>
     <lastmod>2026-09-13T22:14:00+08:00</lastmod>
   </url><url>
@@ -12,16 +15,31 @@
     <lastmod>2026-02-08T23:42:33+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/</loc>
-    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/categories/</loc>
-    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/tags/c%E8%AF%AD%E8%A8%80/</loc>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/post/</loc>
-    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/tags/risc-v/</loc>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/tags/</loc>
-    <lastmod>2026-09-13T22:14:00+08:00</lastmod>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.tangjiaxin.top/categories/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2026-10-07T22:38:43+08:00</lastmod>
   </url><url>
     <loc>https://blog.tangjiaxin.top/tags/%E6%80%9D%E8%80%83/</loc>
     <lastmod>2026-09-13T22:14:00+08:00</lastmod>

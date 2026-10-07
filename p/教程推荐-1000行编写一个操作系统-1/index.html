@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="推荐一个使用 1000 行以内 C 语言编写基于 RISC-V 操作系统内核的教程。">
+<title>教程推荐 1000行编写一个操作系统 1</title>
+
+
+<link rel="canonical" href="https://blog.tangjiaxin.top/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+
+
+<link rel="stylesheet" href="/scss/style.min.6c875234350e518395efbf51958523b0852fb2215ab8cb81358f9317153eba2d.css"><meta property='og:title' content="教程推荐 1000行编写一个操作系统 1">
+<meta property='og:description' content="推荐一个使用 1000 行以内 C 语言编写基于 RISC-V 操作系统内核的教程。">
+<meta property='og:url' content='https://blog.tangjiaxin.top/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/'>
+<meta property='og:site_name' content='TJX 的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='操作系统' /><meta property='article:tag' content='C语言' /><meta property='article:tag' content='RISC-V' /><meta property='article:tag' content='教程' /><meta property='article:published_time' content='2026-10-07T22:38:43&#43;08:00'/><meta property='article:modified_time' content='2026-10-07T22:38:43&#43;08:00'/><meta property='og:image' content='https://blog.tangjiaxin.top/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/a-storm-1932.jpg' />
+<meta name="twitter:title" content="教程推荐 1000行编写一个操作系统 1">
+<meta name="twitter:description" content="推荐一个使用 1000 行以内 C 语言编写基于 RISC-V 操作系统内核的教程。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.tangjiaxin.top/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/a-storm-1932.jpg' />
+    <link rel="shortcut icon" href="/img/world.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        <figure class="site-avatar">
+                <a href="/">
+                    <img src="/img/xiaohuli.jpg" 
+                        width="300"
+                        height="300"
+                        class="site-logo"
+                        loading="lazy"
+                        alt="Avatar">
+                </a>
+                
+                    <span class="emoji">🥵</span>
+                
+            </figure>
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">TJX 的博客</a></h1>
+            <h2 class="site-description">这是TJX的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/1308291832'
+                        
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='send@email.tangjiaxin.top'
+                        
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/tangjiaxin188'
+                        
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/link/' >
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Link</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span></span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title"></h2>
+        
+        <div class="widget--toc">
+            <nav class="toc-nav" id="TableOfContents">
+                
+  <ol>
+    <li><a href="#新手须知">新手须知</a></li>
+    <li><a href="#编译器">编译器</a></li>
+    <li><a href="#为什么选择clang">为什么选择clang</a></li>
+    <li><a href="#需要安装什么">需要安装什么？</a></li>
+    <li><a href="#clang怎么用">clang怎么用？</a></li>
+    <li><a href="#虚拟机启动">虚拟机启动</a></li>
+    <li><a href="#最后一块学前拼图">最后一块学前拼图</a></li>
+    <li><a href="#现在开始探索吧">现在开始探索吧</a></li>
+  </ol>
+
+            </nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+    <div class="article-image">
+        <a href="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/">
+            <img alt="Featured image of post 教程推荐 1000行编写一个操作系统 1" height="1244" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/a-storm-1932.jpg" srcset="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/a-storm-1932_hu_9bdd991171dfe78f.jpg 800w, /p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/a-storm-1932_hu_5e0a92ed48d958bc.jpg 1600w, /p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/a-storm-1932.jpg 1652w" width="1652">
+        </a>
+    </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            
+            
+            
+            <a href="/categories/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90/" style="background-color: hsl(100, 60%, 84%); color: hsl(100, 60%, 15%);">
+                教程推荐
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/">教程推荐 1000行编写一个操作系统 1</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            推荐一个使用 1000 行以内 C 语言编写基于 RISC-V 操作系统内核的教程。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    <footer class="article-meta">
+        
+            <div class="inline-meta">
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                    <time class="article-time--published" datetime='2026-10-07T22:38:43&#43;08:00'>Wednesday, October 7, 2026</time>
+                
+
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                    <time class="article-time--reading">
+                        
+                    </time>
+                
+            </div>
+        
+
+        
+
+        
+    </footer>
+    
+</div>
+
+</header>
+
+    
+    <aside class="article-toc">
+        <details>
+            <summary>
+                <div class="article-toc-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                    <span></span>
+                </div>
+            </summary>
+            <nav class="toc-nav">
+                
+  <ol>
+    <li><a href="#新手须知">新手须知</a></li>
+    <li><a href="#编译器">编译器</a></li>
+    <li><a href="#为什么选择clang">为什么选择clang</a></li>
+    <li><a href="#需要安装什么">需要安装什么？</a></li>
+    <li><a href="#clang怎么用">clang怎么用？</a></li>
+    <li><a href="#虚拟机启动">虚拟机启动</a></li>
+    <li><a href="#最后一块学前拼图">最后一块学前拼图</a></li>
+    <li><a href="#现在开始探索吧">现在开始探索吧</a></li>
+  </ol>
+
+            </nav>
+        </details>
+    </aside>
+    
+
+    <section class="article-content">
+    
+    
+    <p>大家好，今天和大家分享一个我之前看过的很好的一个教程，关于计算机系统的。</p>
+<p>如果你是计算机相关专业，那么你一定不可避免的学过操作系统这门课，我在考研的时候也囫囵吞枣式的学习过这门课程，不过学得也很浅，背了几个算法，背了几个知识点就过去了，只是大概了解计算机如何分配内存和资源，如何操控磁盘和io；操作系统的课本不会告诉你怎么去真正的写一个操作系统，我相信很多对计算机感兴趣的人并不只想知道理论知识，还想要自己真正的去实现一个操作系统，不需要有太多功能，也不需要能做到什么，只要能写出来就行了。</p>
+<p>由nuta所编写的OS in 1000 Lines是一个很棒的教程，教程的链接是<a class="link" href="https://1000os.seiya.me"  target="_blank" rel="noopener"
+    >1000os.seiya.me</a>，有官方中文，项目的地址为<a class="link" href="https://github.com/nuta/operating-system-in-1000-lines"  target="_blank" rel="noopener"
+    >os-in-1000-lines</a>。这个教程讲述了如何使用1000行以内的C语言编写一个基于riscv的操作系统内核，这个教程很精简，门槛不高，不过在大家阅读之前，我还是补充一点内容给对C语言了解的不太多的朋友比较好。</p>
+<h2 id="新手须知">新手须知
+</h2><p>很多朋友学C语言的时候都是在Windows系统上，Windows系统上常用的开发工具是Visual Studio C++，有很多人在学得时候甚至是用VC++或者DevC++学习的，虽然他们也能写出很多程序，但是对于这个教程来说不行。在正式学习之前，你可以通过在网上搜集资料，或者问ai，来学习如何使用WSL或者如何安装一个Linux的虚拟机（我推荐fedora workstation，这个系统开箱即用，不需要关心太多）；</p>
+<p>在准备好环境之后，还有一些基础的知识需要和新手说；</p>
+<h2 id="编译器">编译器
+</h2><p>首先要说的是编译器，编辑器什么的，很多朋友在学习C语言的时候都是在一个编辑界面，按一下编译并运行就弹出一个黑框显示结果，所以他们可能确实不了解这些相关内容，简单来说，你写的代码只是一个文本文件，电脑看不懂这个文本文件，也无法运行他，所以需要一个叫做编译器的工具将代码翻译成电脑能看懂的可执行文件；常见的编译器有gcc，clang，msvc，他们都各有优劣，这个教程将使用clang作为编译器；编辑器就是写代码的软件，你可以任选一个，对于不了解linux的朋友来说，nano是一个大部分系统自带，用起来很简单的编辑器，或者也可以用系统自带的文本编辑器来写。又或者你可以去问ai或者自己搜集如何使用vscode，zed等编辑器；</p>
+<p><img alt="代码流水线" class="gallery-image" data-flex-basis="857px" data-flex-grow="357" height="222" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E4%BB%A3%E7%A0%81%E6%B5%81%E6%B0%B4%E7%BA%BF.png" width="793"></p>
+<h2 id="为什么选择clang">为什么选择clang
+</h2><p>既然编译器有三个，为什么选择clang，因为clang好用；这里来说一下编译器是如何把代码翻译成可执行文件的：当你的代码文件喂给clang时，首先clang会进行处理，把一些宏定义展开，执行一些#开头的预处理命令（了解就行），再生成完整的代码之后，会把代码翻译成中间语言，到这一步代码依旧不能直接运行；我们额外的再来看一个知识：计算机怎么跑程序？计算机的CPU只会按照它预设的指令集来对一个固定长度的数字进行执行，也就是给CPU一个数字，CPU就会按照预设的方式把这个数字拆成指令，而这个指令集就决定了如何拆这个数字；比如在指令集A中，当收到0001时就在显示屏输出hello，而指令集B里，收到0001时输出world，同样的代码在A指令集的CPU和B指令集的CPU运行结果不一样。</p>
+<p><img alt="指令集差异" class="gallery-image" data-flex-basis="464px" data-flex-grow="193" height="514" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B7%AE%E5%BC%82.png" srcset="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B7%AE%E5%BC%82_hu_5e20d2a507632528.png 800w, /p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%B7%AE%E5%BC%82.png 994w" width="994"></p>
+<p>不一样指令集的CPU不能执行同一个程序，所以编译器要根据当前的CPU指令集来输出不同的可执行文件，这也是为什么编译器要把代码翻译成中间语言，如果直接翻译成指令，换一个指令集的CPU就得重新写一个编译器了；翻译成中间语言后，再根据指令集翻译成对应的汇编语言，汇编语言是CPU执行的那一串数据的给人看的版本，把抽象的指令改成了助记词；汇编语言通过简单的变换就成为了真正的指令数据，理论上CPU直接执行这一堆数据就能执行程序了，然而还不能，因为操作系统还不能直接运行这一堆数据，所以还要把这一堆数据按照操作系统想要的方式打包，这个过程称为链接，最后操作系统读取这个格式确认是可执行文件之后再执行；</p>
+<p><img alt="翻译" class="gallery-image" data-flex-basis="831px" data-flex-grow="346" height="358" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E7%BF%BB%E8%AF%91.png" srcset="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E7%BF%BB%E8%AF%91_hu_ebb2c5bee8df4e16.png 800w, /p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/%E7%BF%BB%E8%AF%91.png 1241w" width="1241"></p>
+<p>为什么讲这么多呢，因为等会不可避免的需要知道这些，所以提前打一个预防针；clang的一个很大的优势就是带了一个可以转换成很多个架构的后端llvm和很多工具，不需要你去额外的安装什么；如前文所说，这个操作系统是基于riscv的，riscv是一个指令集，它的指令数量很少，适合学习，而我们平常使用的是x86指令集，用clang可以很轻松的把代码在x86的设备上编译成riscv指令；</p>
+<h2 id="需要安装什么">需要安装什么？
+</h2><p>在教程中有写，需要安装clang llvm lld qemu-system-riscv32这几个软件，在linux上，这不是什么难题，基本上一个指令就能覆盖了。这里介绍一下qemu，这是一个虚拟机软件，system指系统模式，只需要知道它可以直接模拟硬件设备就行，riscv32则是指明了其模拟的指令集；lld是clang和llvm用来链接的工具；除了这些工具，还要一个 <strong>很重要的东西</strong>，就是opensbi的固件代码，在原文里有具体下载地址，这个固件的作用相当于BIOS，用来启动硬件和系统的；</p>
+<h2 id="clang怎么用">clang怎么用？
+</h2><p>首先你需要打开一个控制台，然后输入 <code>clang [选项] &lt;文件&gt;</code> 就行了，比如 <code>clang -o main.out main.c</code>，意思就是使用clang这个软件，提供了一个-o main.out的选项，意思是输出到叫main.out的文件，main.c就是提供给clang 的代码文件，当然你可以提供很多个；</p>
+<p>现在打开一个终端，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">clang -print-targets <span class="p">|</span> grep riscv32
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果显示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">riscv32     - 32-bit RISC-V
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就说明clang可以编译为riscv32指令集的指令</p>
+<h2 id="虚拟机启动">虚拟机启动
+</h2><p>现在把opensbi的文件放在一个文件夹里，打开这个文件夹，在这个文件夹打开终端，执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">qemu-system-riscv32 -machine virt -bios default -nographic -serial mon:stdio --no-reboot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就会启动虚拟机，具体这些参数的作用原文有写
+启动后会显示opensbi的标志，说明成功了。</p>
+<p><img alt="opensbi" class="gallery-image" data-flex-basis="276px" data-flex-grow="115" height="420" loading="lazy" sizes="(max-width: 767px) calc(100vw - 30px), (max-width: 1023px) 700px, (max-width: 1279px) 950px, 1232px" src="/p/%E6%95%99%E7%A8%8B%E6%8E%A8%E8%8D%90-1000%E8%A1%8C%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-1/opensbi.png" width="483"></p>
+<h2 id="最后一块学前拼图">最后一块学前拼图
+</h2><p>现在还剩下一个拼图，链接；前文说了链接是为了把代码打包成系统能用的样子，然而这次我们要写的就是一个系统，所以我们不能使用默认的链接方式。要决定链接方式，就需要通过编写链接脚本，为什么换个打包方式就能写操作系统呢，因为当我们加载了opensbi和我们写的系统时，qemu会把他们加载到不同的内存地址，opensbi由于是bios，会放在启动地址，执行完一些指令后又会在另一个地址启动系统；我们在链接脚本中指定操作系统的入口地址，qemu会把这个入口放在对应的内存地址，只要这个内存地址是opensbi会启动的，那么我们的系统就会开始运行了；</p>
+<h2 id="现在开始探索吧">现在开始探索吧
+</h2><p>别忘了本文只是一个推荐，具体的内容还要自己去看；这是我根据教程写的<a class="link" href="https://github.com/tangjiaxin188/os-by-os-in-1000-lines"  target="_blank" rel="noopener"
+    >项目</a>，有一些更改，不过大体还是直接抄的教程的；</p>
+
+</section>
+
+
+    <footer class="article-meta article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+        
+            <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+        
+            <a href="/tags/risc-v/">RISC-V</a>
+        
+            <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright inline-meta">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+
+        <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "TJX 的博客" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2026 TJX 的博客
+    </section>
+    
+    <section class="powerby">
+         <br />
+        
+    </section>
+</footer>
+
+
+    
+
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
+    
+    if (shouldLoad) {
+        gallery(articleContent);
+
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
+
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
+
+    
+
+            </main>
+        </div>
+        
+<script type="text/javascript" src="/ts/main.d00997a2f4a6ce525f496da0c3ae6ad392b0468b8a9024f23309fdfc75c67a35.js" defer></script>
+
+
+    </body>
+</html>
